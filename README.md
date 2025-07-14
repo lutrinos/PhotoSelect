@@ -3,7 +3,7 @@ Un projet personnel permettant de sélectionner facilement les images, pour (par
 ## Installation
 1. Cloner le dépôt de code
 ```
-git clone https://github.com/lutrinos/PhotoSelect
+git clone --depth 1 https://github.com/lutrinos/PhotoSelect
 ```
 
 2. Installer les dépendances
