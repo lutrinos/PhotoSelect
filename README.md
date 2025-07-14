@@ -6,27 +6,32 @@ Un projet personnel permettant de sélectionner facilement les images, pour (par
 git clone --depth 1 https://github.com/lutrinos/PhotoSelect
 ```
 
-2. Installer les dépendances
+2. Se déplacer dans le dossier du projet
+```
+cd PhotoSelect
+```
+
+3. Installer les dépendances
 ```
 npm install
 ```
 
-3. Renommez le fichier `.local.env` en `.env`. Sur Linux, cela peut être fait avec
+4. Renommez le fichier `.local.env` en `.env`. Sur Linux, cela peut être fait avec
 ```
 mv .local.env .env
 ```
 
-4. Initialiser la base de données avec Prisma
+5. Initialiser la base de données avec Prisma
 ```
 npm run migrate
 ```
 
-5. Construire l'application
+6. Construire l'application
 ```
 npm run build
 ```
 
-6. Servir l'application web
+7. Servir l'application web
 ```
 npm run start
 ```
