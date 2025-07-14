@@ -6,10 +6,12 @@ import { Image as MantineImage } from '@mantine/core';
 import { EmblaCarouselType } from 'embla-carousel';
 import { useEffect, useState } from 'react';
 
+const IMAGE_OFFSET = 4;
 
 export const ImagesCarousel = ({ images, height = 100, index = 0 }: { images: Image[], height?: number, index?: number }) => {
     const [slide, setSlide] = useState(0);
     const [api, setApi] = useState<EmblaCarouselType | null>(null);
+    const [limits, setLimits] = useState([0, 0]);
 
     useEffect(() => {
         if (api) {
@@ -26,6 +28,13 @@ export const ImagesCarousel = ({ images, height = 100, index = 0 }: { images: Im
             api.scrollTo(index, true);
         }
     }, [api, images, index]);
+
+    useEffect(() => {
+        if (api) {
+            const arr = api.slidesInView();
+            setLimits([arr[0] - IMAGE_OFFSET, arr[1] + IMAGE_OFFSET]);
+        }
+    }, [api, slide]);
 
 
     return (
@@ -59,7 +68,7 @@ export const ImagesCarousel = ({ images, height = 100, index = 0 }: { images: Im
                             w={(height - 12) * img.width / img.height}
                             fit="contain"
                             radius="md"
-                            loading='lazy'
+                            loading={(i >= limits[0] && i <= limits[1]) ? 'eager' : 'lazy'}
                             className="bg-amber-100"
                         />
                     </Carousel.Slide>

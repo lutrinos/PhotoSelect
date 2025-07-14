@@ -11,17 +11,22 @@ git clone https://github.com/lutrinos/PhotoSelect
 npm install
 ```
 
-3. Initialiser la base de données avec Prisma
+3. Renommez le fichier `.local.env` en `.env`. Sur Linux, cela peut être fait avec
+```
+mv .local.env .env
+```
+
+4. Initialiser la base de données avec Prisma
 ```
 npm run migrate
 ```
 
-4. Construire l'application
+5. Construire l'application
 ```
 npm run build
 ```
 
-5. Servir l'application web
+6. Servir l'application web
 ```
 npm run start
 ```
