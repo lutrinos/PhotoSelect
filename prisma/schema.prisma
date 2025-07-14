@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  //previewFeatures = ["driverAdapters"]
+  output   = "../src/app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Bucket {
+  id Int @id @default(autoincrement())
+  name String
+  
+  index Int @default(0) // Indice de l'image visionnée actuel parmi les images
+  count Int @default(0) // Nombre de documents sélectionnées
+  total Int @default(0) // Nombre total de documents
+
+  source String
+
+  images Image[]
+}
+
+model Image {
+  id Int @id @default(autoincrement())
+  hash String
+  width Int
+  height Int
+
+  selected Boolean @default(false)
+
+  bucketId Int
+  bucket Bucket @relation(fields: [bucketId], references: [id])
+}

@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Un projet personnel permettant de sélectionner facilement les images, pour (par exemple) un album photo grâce à une interface web.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Installation
+1. Cloner le dépôt de code
+```
+git clone https://github.com/lutrinos/PhotoSelect
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Installer les dépendances
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Initialiser la base de données avec Prisma
+```
+npm run migrate
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Construire l'application
+```
+npm run build
+```
 
-## Learn More
+5. Servir l'application web
+```
+npm run start
+```
+Puis ouvrir le lien indiqué par la commande dans un navigateur, souvent ce sera http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+## Fonctionnement
+Une fois l'application web ouverte, il faut créer une sélection via le bouton "Créer une sélection".
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Il conduit à un formulaire où il est demandé d'indiquer le nom de la sélection, ainsi que le chemin d'accès des images. Celui-ci doit être accessible directement depuis l'ordinateur où vous exécutez l'application !
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vous serez ensuite conduit à l'interface de sélection, qui est constitué des parties suivantes :
+- l'en-tête (la barre supérieure) indiquant le titre de la sélection et le nombre d'images sélectionnées sur le nombre d'images au total
+- la barre latérale, où les images sélectionnées sont présentes, avec un ordre inversé (les dernières images sélectionnées se trouvent tout en haut)
+- l'espace principal, avec l'image actuelle sur laquelle vous pouvez zoomer en cliquant, et en bas la liste des prochaines images qui seront visualisées.
+> Note concernant l'ordre des images : elles sont dans l'ordre lexicographique de leur chemin d'accès composante à composante. Autrement dit, elles sont ordonnées de la même manière que dans un explorateur de fichier, sans distinction dossier / image. De plus, tous les fichiers m'étant par des images valides sont sautés.
+- le bas de page avec la barre d'action. À gauche ne numéro de l'image sur le nombre total d'images. AU milieu, les flèches permettent de naviguer vers la gauche ou la droite parmi les images. Le bouton central permet de sélectionner ou de retirer l'image actuelle à la sélection. Les images sélectionnées sont encadrées par un bord vers, et l'image actuelle par un bord noir.
 
-## Deploy on Vercel
+En bas à droite, le bouton "Télécharger" permet de télécharger -à tout moment- un dossier contenant toutes les images sélectionnées (ordonnées dans le même ordre initial). Ce dossier est zippé (compressé) donc il faut au préalable l'extraire pour y accéder.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Lorsque vous "éteignez" l'application, le progrès n'est pas perdu ! En la relançant vous retournerez là où vous vous étiez arrêté.
