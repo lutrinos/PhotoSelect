@@ -11,7 +11,6 @@ import { ImagesCarousel } from './carousel';
 import Preview from './preview';
 import SelectedList from './selected';
 import { notifications } from '@mantine/notifications';
-import Link from 'next/link';
 
 
 export default function () {
@@ -75,6 +74,26 @@ export default function () {
             return v;
         })
     }, [index]);
+
+    useEffect(() => {
+        const fn = (e) => {
+            if (images.length === 0) return;
+            if (e.keyCode === 39) {// Droite
+                setIndex((v) => {
+                    console.log(v, Math.min(v + 1, images.length - 1));
+                    return Math.min(v + 1, images.length - 1);
+                });
+            } else if (e.keyCode === 37) {// Gauche
+                setIndex((v) => Math.max(v - 1, 0))
+            }
+        };
+
+        document.addEventListener('keydown', fn);
+
+        return () => {
+            document.removeEventListener('keydown', fn);
+        };
+    }, [images]);
 
     if (!bucket) {
         return;
