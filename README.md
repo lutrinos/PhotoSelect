@@ -37,13 +37,6 @@ npm run start
 ```
 Puis ouvrir le lien indiqué par la commande dans un navigateur, souvent ce sera http://localhost:3000
 
-## Mise à jour
-Pour mettre à jour l'application, vous pouvez faire la commande
-```
-git pull
-```
-Attention ! Cela supprimera la base de donnée précédente, et vous devrez refaire la sélection !
-
 ## Fonctionnement
 Une fois l'application web ouverte, il faut créer une sélection via le bouton "Créer une sélection".
 
@@ -61,6 +54,13 @@ Vous serez ensuite conduit à l'interface de sélection, qui est constitué des 
 En bas à droite, le bouton "Télécharger" permet de télécharger à tout moment un dossier contenant toutes les images sélectionnées. Ce dossier est zippé (compressé) donc il faut au l'extraire pour y accéder une fois qu'il a été téléchargé.
 
 Lorsque vous "éteignez" l'application, le progrès n'est pas perdu ! En la relançant vous retournerez là où vous vous étiez arrêté.
+
+## Mise à jour
+Pour mettre à jour l'application, vous pouvez faire la commande
+```
+git pull
+```
+Attention ! Cela supprimera la base de donnée précédente, et vous devrez refaire la sélection !
 
 ## Versions
 - Version avec l'interface légèrement remaniée du 15 juillet 2025
