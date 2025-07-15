@@ -11,6 +11,7 @@ import { ImagesCarousel } from './carousel';
 import Preview from './preview';
 import SelectedList from './selected';
 import { notifications } from '@mantine/notifications';
+import Link from 'next/link';
 
 
 export default function () {
@@ -107,9 +108,15 @@ export default function () {
             padding="md"
         >
             <AppShell.Header>
-                <Flex className='h-full' justify="center" align="center" gap="xl">
+                <Flex className='h-full' justify="space-between" align="center" gap="xl" p={8}>
                     <Title order={4}>{bucket.name}</Title>
                     <Text>{bucket.count} / {bucket.total} sélectionné</Text>
+                    <Button
+                        variant="light"
+                        component={Link}
+                        href="/">
+                        Accueil
+                    </Button>
                 </Flex>
             </AppShell.Header>
             <AppShell.Navbar p="md">
@@ -129,7 +136,14 @@ export default function () {
                             </Center>
                         )
                     }
-                    <ImagesCarousel index={index} height={200} images={images} />
+                    <ImagesCarousel
+                        onClick={(index) => {
+                            setIndex(index);
+                        }}
+                        index={index}
+                        height={200}
+                        images={images}
+                    />
                 </div>
             </AppShell.Main>
             <AppShell.Footer p="md">

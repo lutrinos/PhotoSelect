@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 const IMAGE_OFFSET = 4;
 
-export const ImagesCarousel = ({ images, height = 100, index = 0 }: { images: Image[], height?: number, index?: number }) => {
+export const ImagesCarousel = ({ images, height = 100, index = 0, onClick }: { images: Image[], height?: number, index?: number, onClick: (index: number, image: Image) => void }) => {
     const [slide, setSlide] = useState(0);
     const [api, setApi] = useState<EmblaCarouselType | null>(null);
     const [limits, setLimits] = useState([0, 0]);
@@ -55,7 +55,12 @@ export const ImagesCarousel = ({ images, height = 100, index = 0 }: { images: Im
         >
             {
                 images.map((img: Image, i: number) => (
-                    <Carousel.Slide key={img.id} p={4} className={`rounded-md border-2 transition-all ${img.selected ? 'border-green-500' : (index === i ? 'border-slate-500' : 'border-transparent')}`}>
+                    <Carousel.Slide
+                        key={img.id}
+                        p={4}
+                        onClick={() => onClick(i, img)}
+                        className={`rounded-md border-2 transition-all ${img.selected ? 'border-green-500' : (index === i ? 'border-slate-500' : 'border-transparent')}`}
+                    >
                         <MantineImage
                             onLoad={(evt) => {
                                 if (evt.target) {

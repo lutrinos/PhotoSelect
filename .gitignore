@@ -44,3 +44,6 @@ next-env.d.ts
 /prisma/local.db
 /prisma/migrations
 /src/app/generated/prisma
+
+# Testing
+/test
