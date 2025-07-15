@@ -13,7 +13,7 @@ const BucketList = ({ buckets }: any) => {
 
         {
           buckets.map((bucket: Bucket) => {
-            const p = bucket.total === 0 ? 0 : bucket.index / bucket.total;
+            const p = bucket.total === 0 ? 0 : (bucket.index + 1) / bucket.total;
 
             return (
               <Card

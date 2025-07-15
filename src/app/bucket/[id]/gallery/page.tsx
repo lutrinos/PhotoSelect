@@ -88,12 +88,11 @@ export default function () {
                     }}
                 >
                     <Carousel
-                        emblaOptions={{ dragFree: true }}
-                        slideSize="auto"
+                        slideSize="100%"
                         className='flex justify-center items-center h-full bg-black'
                         getEmblaApi={setEmbla}
                         initialSlide={2}
-
+                        withControls
                     >
                         {
                             images.map((img: Image, i: number) => (

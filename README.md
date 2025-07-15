@@ -35,7 +35,7 @@ npm run build
 ```
 npm run start
 ```
-Puis ouvrir le lien indiqué par la commande dans un navigateur, souvent ce sera http://localhost:3000
+Puis ouvrir le lien indiqué par la commande dans un navigateur, souvent ce sera http://localhost:3000. Lorsque vous voudrez ouvrir de nouveau l'application, il faudra répéter cette dernière commande seulement !
 
 ## Fonctionnement
 Une fois l'application web ouverte, il faut créer une sélection via le bouton "Créer une sélection".
@@ -64,12 +64,25 @@ Lorsque vous "éteignez" l'application, le progrès n'est pas perdu ! En la rela
 ![Dashboard](/images/dashboard.png "Application")
 
 ## Mise à jour
-Pour mettre à jour l'application, vous pouvez faire la commande
+Pour mettre à jour l'application, vous pouvez:
+
+1. Mettre à jour le code
 ```
 git pull
 ```
-Attention ! Cela supprimera la base de donnée précédente, et vous devrez refaire la sélection !
+
+2. Mettre à jour la base de donnée
+```
+npm run migrate
+```
+
+3. Reconstruire l'application
+```
+npm run build
+```
+
 
 ## Versions
-- Version avec l'interface légèrement remaniée du 15 juillet 2025
+- Version avec la galerie des images sélectionnées du 15 juillet 2025 après-midi
+- Version avec l'interface légèrement remaniée du 15 juillet 2025 matin
 - Version initiale du 14 juillet 2025

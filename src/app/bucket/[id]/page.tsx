@@ -170,7 +170,7 @@ export default function () {
                         nextDisabled={index >= images.length - 1}
                     />
                     <Flex align="center" gap="sm">
-                        <Button variant="light" component={Link} href={`/bucket/${bucket.id}/gallery`} disabled={!bucket}>Gallerie</Button>
+                        <Button variant="light" component={Link} href={`/bucket/${bucket.id}/gallery`} disabled={!bucket}>Galerie</Button>
                         <Button onClick={() => window.open(`/api/bucket/download/${bucket.id}`, RedirectType.push)} disabled={!bucket}>Télécharger</Button>
                     </Flex>
                 </Flex>
