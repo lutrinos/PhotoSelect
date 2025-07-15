@@ -1,9 +1,9 @@
 // Import styles of packages that you've installed.
 // All packages except `@mantine/hooks` require styles imports
+import "./globals.css";
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/carousel/styles.css';
-import "./globals.css";
 
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';

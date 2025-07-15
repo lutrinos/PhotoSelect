@@ -92,7 +92,11 @@ export default function () {
                         className='flex justify-center items-center h-full bg-black'
                         getEmblaApi={setEmbla}
                         initialSlide={2}
-                        withControls
+                        withControls={true}
+                        withKeyboardEvents={true}
+                        classNames={{
+                            control: 'bg-white!'
+                        }}
                     >
                         {
                             images.map((img: Image, i: number) => (
