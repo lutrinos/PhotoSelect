@@ -55,6 +55,14 @@ En bas à droite, le bouton "Télécharger" permet de télécharger à tout mome
 
 Lorsque vous "éteignez" l'application, le progrès n'est pas perdu ! En la relançant vous retournerez là où vous vous étiez arrêté.
 
+## Images
+
+![Accueil](/images/accueil.png "Accueil")
+
+![Création d'une sélection](/images/creer_selection.png "Création d'une sélection")
+
+![Dashboard](/images/dashboard.png "Application")
+
 ## Mise à jour
 Pour mettre à jour l'application, vous pouvez faire la commande
 ```
