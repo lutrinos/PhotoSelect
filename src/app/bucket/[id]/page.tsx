@@ -169,7 +169,10 @@ export default function () {
                         prevDisabled={index <= 0}
                         nextDisabled={index >= images.length - 1}
                     />
-                    <Button onClick={() => window.open(`/api/bucket/download/${bucket.id}`, RedirectType.push)} disabled={!bucket}>Télécharger</Button>
+                    <Flex align="center" gap="sm">
+                        <Button variant="light" component={Link} href={`/bucket/${bucket.id}/gallery`} disabled={!bucket}>Gallerie</Button>
+                        <Button onClick={() => window.open(`/api/bucket/download/${bucket.id}`, RedirectType.push)} disabled={!bucket}>Télécharger</Button>
+                    </Flex>
                 </Flex>
             </AppShell.Footer>
         </AppShell>

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { getBuckets } from './action';
 
-// TODO: Corriger le wrapping
 const BucketList = ({ buckets }: any) => {
   return (
     <ScrollArea.Autosize mah={400} my={12}>
