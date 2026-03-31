@@ -1,0 +1,40 @@
+/* Your custom styles file (e.g., CustomImageZoom.css) */
+
+/* Ensure your custom styles are imported *after* the library's default styles */
+
+.iiz__img { /* This is a common class name used by the library for the image */
+    object-fit: contain !important; /* Use !important if necessary to override defaults */
+    width: 100%; /* Ensure it takes up available width */
+    height: 100%; /* Ensure it takes up available height */
+  }
+  
+  /* You might also need to adjust the container if the image isn't correctly constrained */
+  .iiz { /* This is often the main container div/figure */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Add fixed width/height or max-width/max-height to the container if needed */
+      max-width: 100%;
+      max-height: 100%;
+      overflow: hidden; /* Important to prevent image from spilling out */
+  }
+  
+/*
+.iiz {
+    position: relative;
+    display: block;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.iiz div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.iiz__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}*/

@@ -86,3 +86,6 @@ npm run build
 - Version avec la galerie des images sélectionnées du 15 juillet 2025 après-midi
 - Version avec l'interface légèrement remaniée du 15 juillet 2025 matin
 - Version initiale du 14 juillet 2025
+
+## À faire
+- Configurer Github actions pour générer automatiquement un build
